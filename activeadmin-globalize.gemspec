@@ -17,7 +17,7 @@ Gem::Specification.new do |s|
 
   s.add_dependency 'activeadmin', '>= 1.0', '< 3.0'
   # Try to support rails from 3.2 up to 4.2.x
-  s.add_dependency 'globalize', '>= 3.1.0', '< 6.0'
+  s.add_dependency 'globalize', '>= 3.1.0', '< 7.0'
 
   # development dependencies
   s.add_development_dependency 'bundler', '>= 1.6.1'

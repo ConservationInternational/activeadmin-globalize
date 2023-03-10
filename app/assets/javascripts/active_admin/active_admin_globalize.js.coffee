@@ -110,13 +110,14 @@ $ ->
           $form.submit ->
             # Get all translations (the nested ones too).
             $('.activeadmin-translations > ul').each ->
+              $translationBlock = $(this)
               # Get the corresponding fieldsets.
-              $fieldsets = $(this).siblings('fieldset')
+              $fieldsets = $translationBlock.siblings('fieldset')
               $("li:not(.add-locale) > a", this).each ->
                 # Remove them if the locale is hidden.
                 if $(this).hasClass('hidden')
                   # check if it's an existing translation otherwise remove it
-                  $currentFieldset = $("fieldset#{$(this).attr('href')}")
+                  $currentFieldset = $translationBlock.siblings("fieldset#{$(this).attr('href')}")
                   $translationId = $('input[id$=_id]', $currentFieldset)
                   if $translationId.val()
                     # mark it for database removal appending a _destroy element

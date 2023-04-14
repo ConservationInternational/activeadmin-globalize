@@ -137,11 +137,12 @@ $ ->
         $tabs.filter('.default').click()
 
   # this is to handle elements created with has_many
-  $("a").bind "click", ->
+  $(document).on("has_many_add:after", (e, container) ->
     setTimeout(
       -> translations()
       50
     )
+  )
 
   # Used to toggle translations values for inline fields
   $('a.ui-translation-trigger').click (e) ->

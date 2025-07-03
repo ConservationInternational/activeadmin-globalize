@@ -14,7 +14,6 @@ ActiveAdmin.register Article do
   show do
     attributes_table do
       translated_row(:title)
-      translated_row(:italian_title, locale: :it, field: :title)
       translated_row(:body, inline: false)
     end
   end

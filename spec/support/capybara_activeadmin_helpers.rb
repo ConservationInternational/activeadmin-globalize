@@ -79,8 +79,15 @@ module Capybara
 
     # Return an a element used to trigger language switch using javascript
     def flag_link(locale = I18n.locale)
-      # find the flag icon by class and go back to parent to get the link
-      find(:xpath, %Q{.//i[contains(@class, "flag-#{locale}")]/..})
+      # Try different selectors to find the flag link
+      if has_css?(".ui-translation-trigger[data-locale='#{locale}']", visible: :all)
+        find(".ui-translation-trigger[data-locale='#{locale}']")
+      elsif has_css?(".flag-#{locale}", visible: :all)
+        # find the flag icon by class and go back to parent to get the link
+        find(:xpath, %Q{.//i[contains(@class, "flag-#{locale}")]/..})
+      else
+        raise Capybara::ElementNotFound, "Could not find flag link for locale #{locale}"
+      end
     end
 
     # Link used to switch tabs for translations

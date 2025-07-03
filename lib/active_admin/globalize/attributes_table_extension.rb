@@ -136,7 +136,16 @@ module ActiveAdmin
       end
 
       def available_translations
-        @record_translations ||= @collection.first.translations.order(:locale)
+        # In ActiveAdmin show views, the resource is typically available as 'resource'
+        # Fall back to @record or @collection.first for compatibility
+        current_resource = if respond_to?(:resource)
+                            resource
+                          elsif defined?(@record)
+                            @record
+                          else
+                            @collection.first
+                          end
+        @record_translations ||= current_resource.translations.order(:locale)
       end
 
       def field_translation_value(translation, field)

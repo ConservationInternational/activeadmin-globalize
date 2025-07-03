@@ -240,4 +240,17 @@ ActiveAdmin.setup do |config|
   #
   # config.filters = true
 
+  # == Meta Tags
+  #
+  # Add additional meta tags to the head of the page.
+  #
+  config.meta_tags[:"X-UA-Compatible"] = "IE=edge"
+
+  # == Footer
+  #
+  # Active Admin will display a footer on each page. You can customize
+  # the content of the footer here.
+  #
+  # config.footer = "My Custom Footer Text"
+
 end

@@ -4,7 +4,7 @@ source "https://rubygems.org"
 
 gem "devise", "~> 4.9"
 gem "rails", "~> 7.0"
-gem "globalize", "~> 6.2"
+gem "globalize", "~> 7.0"
 
 # Ensure compatible versions for Rails 7
 gem "activeadmin", "~> 2.13"

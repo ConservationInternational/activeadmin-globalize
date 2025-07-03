@@ -24,7 +24,6 @@ group :test do
   gem 'capybara', '~> 3.38'
   gem 'capybara-screenshot'
   gem 'selenium-webdriver'
-  gem 'webdrivers'
   gem 'fuubar', '~> 2.5'
   gem 'appraisal'
   gem 'awesome_print'

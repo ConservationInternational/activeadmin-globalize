@@ -15,7 +15,7 @@ Gem::Specification.new do |s|
 
   s.files = Dir['{app,config,db,lib}/**/*'] + %w(MIT-LICENSE README.md)
 
-  s.add_dependency 'activeadmin', '>= 1.0', '< 3.0'
+  s.add_dependency 'activeadmin', '>= 3.1.0', '< 4.0'
   # Support Rails 7.0+ with globalize 7.0+
   s.add_dependency 'globalize', '>= 7.0.0'
 
